@@ -42,7 +42,7 @@ RED="0;31m"
 GREEN="0;33m"
 
 # save current directory to bookmarks
-function bs {
+function ds {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -53,7 +53,7 @@ function bs {
 }
 
 # jump to bookmark
-function bg {
+function dj {
     check_help $1
     source $SDIRS
     target="$(eval $(echo echo $(echo \$DIR_$1)))"
@@ -66,15 +66,17 @@ function bg {
     fi
 }
 
+alias j=dj
+
 # print bookmark
-function bp {
+function dp {
     check_help $1
     source $SDIRS
     echo "$(eval $(echo echo $(echo \$DIR_$1)))"
 }
 
 # delete bookmark
-function bd {
+function dd {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -97,7 +99,7 @@ function check_help {
 }
 
 # list bookmarks with dirnam
-function l {
+function dl {
     check_help $1
     source $SDIRS
 
