@@ -76,7 +76,7 @@ function dp {
 }
 
 # delete bookmark
-function dd {
+function ddel {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
